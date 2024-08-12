@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.8" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins";
+      }
+      .container {
+        min-height: 100vh;
+        width: 100%;
+      }
+      .service-wrapper {
+        padding: 5% 8%;
+      }
+      .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        color: #fff;
+        font-size: 5rem;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: transparent;
+        letter-spacing: 4px;
+        background-color: #eee5;
+        background: linear-gradient(8deg, #eee5 0%, #fff 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        margin: 55px;
+      }
+      h1::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        height: 8px;
+        width: 80%;
+        border-radius: 8px;
+        background-color: #eee5;
+      }
+      h1 span {
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: #fff;
+        animation: anim 5s linear infinite;
+      }
+      @keyframes anim {
+        95% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          left: 88%;
+        }
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 80px;
+      }
+      .card {
+        height: 330px;
+        width: 370px;
+        background-color: #eee5;
+        padding: 3% 8%;
+        border: 0.2px solid rgba(114, 226, 174, 0.2);
+        border-radius: 8px;
+        transition: 0.6px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:after {
+        content: "";
+        position: absolute;
+        top: 150%;
+        left: -200px;
+        width: 120%;
+        transform: rotate(50deg);
+        background-color: #fff;
+        height: 10px;
+        filter: blur(30px);
+        opacity: 0.5;
+        transition: 1s;
+      }
+
+      .card:hover:after {
+        width: 225%;
+        top: -100%;
+      }
+
+      card i {
+        color: #72e2ae;
+        margin-top: 40px;
+        font-size: 4.8rem;
+      }
+      .card h2 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .card p {
+        font-size: 20px;
+        text-align: left;
+        width: 100%;
+        margin: 12px 0;
+        color: rgba(225, 255, 255, 0.6);
+      }
+      .card:hover {
+        background-color: transparent;
+        transform: translateY(-8px);
+        border-color: #000;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media screen and (max-width: 900px) {
+        .cards {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        h1 {
+          font-size: 3.5rem;
+        }
+      }
+
+      body {
+        color: #eee5;
+        font-size: 35px;
+        list-style: none;
+        text-align: center;
+        justify-content: center;
+        background-image: url("imgs/background.jpg");
+      }
+      header {
+        color: #eee5;
+        font-size: 45px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 50px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 10;
+      }
+
+      header ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div>M5</div>
+      <nav>
+        <ul>
+          <li id="home" onclick="openPageHome()">HOME</li>
+          <li id="srv" onclick="openPageSrv()">SERVICES</li>
+          <li id="contact" onclick="openPageContact()">CONTACT</li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="service-wrapper">
+        <div class="service">
+          <h1>Our Services<span></span></h1>
+          <div class="cards">
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Nuntă</h2>
+              <p>
+                Serviciile de foto-video pentru nuntă surprind momentele și
+                emoțiile zilei, oferind fotografii și înregistrări video de
+                înaltă calitate, creând amintiri prețioase de la pregătiri până
+                la petrecere.
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Botez</h2>
+              <p>
+                Serviciile de foto-video pentru botez captează momentele
+                speciale și emoțiile evenimentului, oferind fotografii și
+                înregistrări video de înaltă calitate, creând amintiri prețioase
+                de la ceremonie până la petrecere.
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Majorat</h2>
+              <p>
+                Serviciile de foto-video pentru majorat surprind momentele și
+                emoțiile acestei zile speciale, oferind fotografii și
+                înregistrări video de înaltă calitate, creând amintiri prețioase
+                de la începutul petrecerii până la final.
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Ședință foto</h2>
+              <p>
+                Serviciile de foto pentru ședințe foto oferă imagini de înaltă
+                calitate, capturând momente unice și emoțiile din cadrul
+                fiecărei sesiuni, creând amintiri vizuale prețioase.
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Fotografie de produs</h2>
+              <p>
+                Serviciile de fotografie de produs oferă imagini de înaltă
+                calitate, evidențiind detaliile și caracteristicile produselor,
+                esențiale pentru promovarea și vânzarea acestora.
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Eveniment privat</h2>
+              <p>
+                Serviciile de fotografie pentru evenimente private oferă capturi
+                deosebite, surprinzând momentele și atmosfera unică a fiecărui
+                eveniment, de la petreceri de familie la întâlniri speciale,
+                transformând acele clipe în amintiri de neprețuit.
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Eveniment public</h2>
+              <p>
+                Serviciile de fotografie pentru evenimente publice oferă imagini
+                profesionale ce capturează atmosfera vibrantă și momentele
+                semnificative ale fiecărei ocazii, contribuind la documentarea
+                și promovarea evenimentului într-un mod memorabil.
+              </p>
+            </div>
+            <div class="card">
+              <i class="fa-solid fa-camera"></i>
+              <h2>Sisteme de sunet și iluminat</h2>
+              <p>
+                Serviciile pentru sisteme de sunet și iluminat oferă soluții
+                profesionale pentru a crea experiențe audiovizuale remarcabile.
+                Cu expertiză în proiectare, instalare și operare, aceste
+                servicii aduc claritate sonoră și ambianță luminoasă pentru
+                evenimente de orice dimensiune, asigurând că fiecare moment este
+                amplificat și luminat în modul cel mai potrivit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openPageContact() {
+        window.location.href = "contact.html";
+      }
+      function openPageSrv() {
+        window.location.href = "srv.html";
+      }
+
+      function openPageHome() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

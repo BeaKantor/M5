@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.8" />
+
+    <style>
+      body {
+        color: #eee5;
+        font-size: 35px;
+        list-style: none;
+        text-align: center;
+        justify-content: center;
+        background-image: url("imgs/background.jpg");
+      }
+      header {
+        color: #eee5;
+        font-size: 45px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 50px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 10;
+      }
+
+      header ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      #content {
+        position: relative;
+        top: 100px;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+        color: #eee5;
+        font-size: 45px;
+        font-family: Roboto, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>M5</div>
+      <nav>
+        <ul>
+          <li id="home" onclick="openPageHome()">HOME</li>
+          <li id="srv" onclick="openPageSrv()">SERVICES</li>
+          <li id="contact" onclick="openPageContact()">CONTACT</li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="content">
+      <p>berar.mihnea@gmail.com</p>
+      <p>+40768 509 291</p>
+      <p>alesilasi28@yahoo.com</p>
+      <p>+40760 272 337</p>
+    </div>
+
+    <script>
+      function openPageContact() {
+        window.location.href = "contact.html";
+      }
+      function openPageSrv() {
+        window.location.href = "srv.html";
+      }
+
+      function openPageHome() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
